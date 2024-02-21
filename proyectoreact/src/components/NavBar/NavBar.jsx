@@ -3,13 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import "./NavBar.css"
 
 function NavBar() {
     return (
         <Navbar expand="lg" className="NavBar bg-body-tertiary}">
             <Container fluid>
-                <Navbar.Brand href="#" className='nav-title'>La Tiendita</Navbar.Brand>
+                <Navbar.Brand href="#" className='nav-title'> <Link to={`/`}>La Tiendita</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav

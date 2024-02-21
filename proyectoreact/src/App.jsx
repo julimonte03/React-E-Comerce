@@ -32,10 +32,6 @@ function App() {
 
       </BrowserRouter>
 
-      {/* <NavBar/>
-        <Sections/>
-        <ItemListContainer/>
-        <ItemDetailContainer id={1}/> */}
     </>
   )
 }

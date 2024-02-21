@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Sections.css";
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //  Link reemplaza el a 
 

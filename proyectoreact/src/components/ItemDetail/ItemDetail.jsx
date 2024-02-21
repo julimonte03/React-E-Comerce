@@ -9,7 +9,6 @@ const ItemDetail = ({product}) => {
             <img src={product.img} alt={product.name} />
             <h2>{product.price}</h2>
             <h2>Stock:{product.stock}</h2>
-            <p>{product.description}</p>
 
             <Counter initial = {1} max={product.stock} />
         </div>
