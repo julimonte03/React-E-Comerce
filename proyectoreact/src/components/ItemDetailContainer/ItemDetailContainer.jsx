@@ -13,7 +13,9 @@ const ItemDetailContainer = () => {
                 const data = await fetch("products.json");
                 const jsonProducts = await data.json();
                 const foundProduct = jsonProducts.find(p => p.id == id);
-                setProduct(foundProduct);
+                if (foundProduct !== undefined){
+                    setProduct(foundProduct);
+                }
             } catch (error) {
                 console.log("error en el fetch" + error);
             }
@@ -21,11 +23,11 @@ const ItemDetailContainer = () => {
 
         fetchProducts();
 
-    }, []);
+    }, [id]);
 
     return (
         <div>
-            <ItemDetail product={product} /> 
+            <ItemDetail product={product}/> 
         </div>
     )
 }

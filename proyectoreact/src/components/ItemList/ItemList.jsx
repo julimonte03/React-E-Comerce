@@ -5,8 +5,9 @@ import "./ItemList.css"
 const ItemList = ({products}) => {
     return (
         <div className='products-container'>
-            {products.map((product, index) => (
 
+            {products.map((product, index) => (
+                
                 <Item product = {product} />
 
             ))}
