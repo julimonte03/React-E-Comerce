@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const data = await fetch("products.json");
+                const data = await fetch("/products.json");
                 const jsonProducts = await data.json();
                 const foundProduct = jsonProducts.find(p => p.id == id);
                 if (foundProduct !== undefined){
