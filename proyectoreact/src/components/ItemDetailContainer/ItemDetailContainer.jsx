@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState();
@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const data = await fetch("/products.json");
+                const data = await fetch("products.json");
                 const jsonProducts = await data.json();
                 const foundProduct = jsonProducts.find(p => p.id == id);
                 setProduct(foundProduct);
@@ -21,13 +21,11 @@ const ItemDetailContainer = () => {
 
         fetchProducts();
 
-    }, [id]);
+    }, []);
 
     return (
         <div>
-                <Link to={`/detail/${product.id}`}>
-                    <ItemDetail product={product} />
-                </Link>
+            <ItemDetail product={product} /> 
         </div>
     )
 }
