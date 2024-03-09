@@ -1,43 +1,53 @@
-import React,{useState,createContext} from "react";
+import React, { useState, createContext } from "react";
 
 export const CartContext = createContext();
 
-const CartProvider = ({children}) =>{
+const CartProvider = ({ children }) => {
+    const [cart, setCart] = useState([]);
 
-    const [cart,setCart] = useState([])
-    const [total,setTotal] = useState(0)
-    const [totalQuantity,setTotalQuantity] = useState(0)
+    const addToCart = (product, cantidad) => {
+        const existentProductIndex = cart.findIndex((prod) => prod.product.id === product.id);
+        
+        if (existentProductIndex === -1) {
+            setCart([...cart, { product, cantidad }]);
+        } else {
+            const newCart = [...cart];
+            newCart[existentProductIndex].cantidad += cantidad;
+            setCart(newCart);
+        }
+    };
 
-    const addToCart = (producto,cantidad) =>{
-        console.log(producto)
-        console.log(cantidad)
-    }
+    const removeItem = (id) => {
+        const newCart = cart.filter((item) => item.product.id !== id);
+        setCart(newCart);
+    };
 
-    // removeItem = () =>{
+    const emptyCart = () => {
+        setCart([]);
+    };
 
-    // }
+    const quantityCart = () => {
+        return cart.reduce((total, item) => total + item.cantidad, 0);
+    };
 
-    // emptyCart = () =>{
+    const totalCart = () => {
+        return cart.reduce((total, item) => total + (item.product.precio * item.cantidad), 0);
+    };
 
-    // }
-
-    // quantityCart = () =>{
-
-    // }
-
-    // totalCart = () =>{
-
-    // }
-
-    return(
-        <CartContext.Provider value ={{
-            cart,
-            total,
-            totalQuantity,
-            addToCart
-        }}>
+    return (
+        <CartContext.Provider
+            value={{
+                cart,
+                addToCart,
+                removeItem,
+                emptyCart,
+                quantityCart,
+                totalCart
+            }}
+        >
             {children}
         </CartContext.Provider>
-    )
-}
+    );
+};
+
 export default CartProvider;

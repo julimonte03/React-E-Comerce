@@ -1,16 +1,17 @@
 import React, {useContext} from 'react'
 import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
 
-    const {totalQuantity} = useContext(CartContext);
-    
+    const {quantityCart} = useContext(CartContext);
+
     return (
         <div>
-
-            <p>cart</p>
-            <p>{totalQuantity == 0 ? null : totalQuantity}</p>
-
+            <Link to={"/cart"}>            
+                <p>cart</p>
+                <p>{quantityCart() == 0 ? null : quantityCart()}</p>
+            </Link>
         </div>
     )
 }

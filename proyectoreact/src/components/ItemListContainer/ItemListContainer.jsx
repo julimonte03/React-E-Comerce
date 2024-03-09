@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import "./ItemListContainer.css"
 import { useParams } from 'react-router-dom';
+import { dataBase } from '../../firebase/config';
+import {collection,getDocs,query,where} from "firebase/firestore"
 
 const ItemListContainer = () => {
 
@@ -9,22 +11,26 @@ const ItemListContainer = () => {
     const {categoryId} = useParams(); 
 
     useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const data = await fetch("/products.json");
-                const jsonProducts = await data.json();
 
-                if (categoryId){
-                    const filteredProducts = jsonProducts.filter((p)=> p.category == categoryId)
-                    setProducts(filteredProducts);
-                }else(setProducts(jsonProducts));
-            } catch (error) {
-                console.log("error en el fetch" + error);
-            }
-        }
+        //FILTRADO DE PRODUCTOS
 
-        fetchProducts();
+        const products = 
 
+        categoryId ? 
+
+        query(collection(dataBase,"products"),where("category","==",categoryId))
+
+        : collection (dataBase,"products")
+
+        getDocs(products)
+        .then(res => {
+            const nuevosProductos = res.docs.map(doc =>{
+                const data = doc.data()
+                return {id:doc.id,...data}
+            })
+            setProducts(nuevosProductos);
+        })
+        .catch(error => console.log(error));
     }, [categoryId]);
 
     return (

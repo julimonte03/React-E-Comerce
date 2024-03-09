@@ -1,4 +1,5 @@
 import './App.css'
+import React,{useState,useEffect} from 'react'
 import NavBar from './components/NavBar/NavBar'
 import Sections from './components/Sections/Sections'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
@@ -8,6 +9,7 @@ import CartWidget from './components/CartWidget/CartWidget'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'; 
 import ErrorRoute from './components/ErrorRoute/ErrorRoute'
 import CartProvider from './context/CartContext'
+import Checkout from './components/Checkout/Checkout'
 
 function App() {
 
@@ -21,8 +23,6 @@ function App() {
 
         <NavBar/>
 
-        <CartWidget/>
-
         <Routes>
         {/* diferentes rutas de navegación */}
 
@@ -33,6 +33,8 @@ function App() {
         <Route path='/detail/:id' element = {<ItemDetailContainer/>}/>
 
         <Route path='/cart' element = {<Cart/>}/>
+
+        <Route path='/checkout' element = {<Checkout/>}/>
 
         {/* ruta en caso de que ninguna de las anteriores funcionen */}
 
