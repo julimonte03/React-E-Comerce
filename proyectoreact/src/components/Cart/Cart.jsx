@@ -11,13 +11,16 @@ const Cart = () => {
       {cart.length === 0 ? (
         <>
           <h1>No hay productos en el carrito</h1>
-          <Link to="/">Ir al inicio</Link>
+          <Link to={"/"}>Ir al inicio</Link>
         </>
       ) : (
         <>
           <h1>Lista de carrito</h1>
+
           {cart.map((p) => (
+
             <CartItem key={p.product.id} product={p} removeItem={removeItem} />
+            
           ))}
           <p>Total: {totalCart()}</p>
 

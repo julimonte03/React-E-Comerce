@@ -5,7 +5,6 @@ import Sections from './components/Sections/Sections'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
-import CartWidget from './components/CartWidget/CartWidget'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'; 
 import ErrorRoute from './components/ErrorRoute/ErrorRoute'
 import CartProvider from './context/CartContext'

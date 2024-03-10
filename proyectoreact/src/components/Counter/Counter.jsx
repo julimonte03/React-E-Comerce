@@ -1,35 +1,33 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import "./Counter.css";
 
-const Counter = ({initial,max}) => {
-    // useState
-    const [contador,setContador] = useState(1);
-    // funcion de decrementar con el setContador
-    const decrementar = () =>{
-        if(contador > initial){
-            setContador(contador - 1);
-        }
+const Counter = ({ initial, max, onAdd }) => {
+  const [contador, setContador] = useState(initial);
+
+  const decrementar = () => {
+    if (contador > initial) {
+      setContador(contador - 1);
     }
-    // funcion de incrementar con el setContador
-    const incrementar = () => {
-        if (contador < max){
-            setContador(contador + 1);
-        }
+  }
+
+  const incrementar = () => {
+    if (contador < max) {
+      setContador(contador + 1);
     }
-    // funcion de agregar
-    const agregar = () => {
-        if (contador > initial){
-            alert(`Agregaste ${contador} productos!`)
-            setContador(initial);
-        }
-    }
-    return (
-        <div>
-            <button onClick={decrementar}>-</button>
-            <p>{contador}</p>
-            <button onClick={incrementar}>+</button>
-            <button onClick={agregar}>Agregar</button>
-        </div>
-    )
+  }
+
+  const agregar = () => {
+    onAdd(contador);
+  }
+
+  return (
+    <div className="counter-container">
+      <button className="counter-button" onClick={decrementar}>-</button>
+      <p className="counter-value">{contador}</p>
+      <button className="counter-button" onClick={incrementar}>+</button>
+      <button className="counter-button" onClick={agregar}>Agregar</button>
+    </div>
+  );
 }
 
-export default Counter
+export default Counter;

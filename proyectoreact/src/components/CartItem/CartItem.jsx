@@ -4,7 +4,7 @@ const CartItem = ({product,removeItem}) => {
   return (
     <div>
 
-      <h3>{product.producto.name}</h3>
+      <h3>{product.product.name}</h3>
 
       <img src={product.product.img} alt={product.product.name} />
 

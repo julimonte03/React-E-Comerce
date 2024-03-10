@@ -1,0 +1,49 @@
+.item-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.item-detail-card {
+    width: 250px; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.item-detail-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.item-detail-name {
+    font-size: 20px; 
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.item-detail-price {
+    font-size: 16px; 
+    margin-bottom: 10px;
+}
+
+.item-detail-stock {
+    font-size: 16px; 
+    margin-bottom: 10px;
+}
+
+.item-detail-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.swal2-popup {
+    margin: 10px;
+    font-size: 10px;
+  }

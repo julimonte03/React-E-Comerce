@@ -1,0 +1,22 @@
+
+.bi-cart {
+
+    font-size: 3rem;
+
+  }
+  
+  .cart-quantity {
+
+    font-size: 1rem;
+
+  }
+  
+
+  .cart-icon-container {
+
+    display: flex;
+
+    align-items: center;
+    
+  }
+  

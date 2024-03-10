@@ -1,0 +1,29 @@
+.counter-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .counter-button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .counter-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .counter-button:disabled {
+    background-color: #ced4da;
+    cursor: not-allowed;
+  }
+  
+  .counter-value {
+    margin: 0 10px;
+  }
+  

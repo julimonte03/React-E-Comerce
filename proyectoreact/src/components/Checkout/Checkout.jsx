@@ -80,18 +80,17 @@ const Checkout = () => {
 
     <form onSubmit={handleForm}>
 
-    {cart.map(p =>{
+    {cart.map(producto => ( 
 
-        <div key={p.product.id}>
+    <div key={producto.product.id}>
+        <p>
+            {""}
+            {producto.product.name} x {producto.cantidad} 
+        </p>
 
-            <p>
-                {""}
-                {p.product.name} x {product.cantidad}
-            </p>
+    </div>
+))}
 
-        </div>
-
-    })}
 
     <div>
         <div>
@@ -101,7 +100,7 @@ const Checkout = () => {
 
         <div>
             <label>Apellido:</label>
-            <input type="text" onChange={e => setApellidp(e.target.value)} />
+            <input type="text" onChange={e => setApellido(e.target.value)} />
         </div>
 
         <div>
