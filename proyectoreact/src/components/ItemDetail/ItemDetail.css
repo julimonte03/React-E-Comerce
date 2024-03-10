@@ -37,10 +37,18 @@
 }
 
 .item-detail-actions {
+
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+
+    flex-direction: column; 
+
+    align-items: center; 
+    
+}
+
+.item-detail-button {
+
+    margin-top: 10px; 
 }
 
 .swal2-popup {

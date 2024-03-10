@@ -8,11 +8,11 @@ const CartItem = ({product,removeItem}) => {
 
       <img src={product.product.img} alt={product.product.name} />
 
-      <p>cantidad:{product.cantidad}</p>
+      <p>Cantidad:{product.cantidad}</p>
 
-      <p>valor unitario: ${product.product.price*product.cantidad}</p>
+      <p>Total: ${product.product.price*product.cantidad}</p>
 
-      <button onClick={()=>removeItem(product.product.id)}>eliminar producto</button>
+      <button onClick={()=>removeItem(product.product.id)}>Eliminar producto</button>
 
     </div>
   )

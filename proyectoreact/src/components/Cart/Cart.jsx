@@ -8,12 +8,19 @@ const Cart = () => {
 
   return (
     <div>
-      {cart.length === 0 ? (
+
+      {cart.length === 0 
+
+      ? 
         <>
+
           <h1>No hay productos en el carrito</h1>
+
           <Link to={"/"}>Ir al inicio</Link>
+
         </>
-      ) : (
+
+       : 
         <>
           <h1>Lista de carrito</h1>
 
@@ -22,15 +29,16 @@ const Cart = () => {
             <CartItem key={p.product.id} product={p} removeItem={removeItem} />
             
           ))}
+
           <p>Total: {totalCart()}</p>
 
           <button onClick={emptyCart}>Vaciar carrito</button>
-
+            
           <Link to={"/checkout"}>
           Completar compra
           </Link>
         </>
-      )}
+      }
     </div>
   );
 };

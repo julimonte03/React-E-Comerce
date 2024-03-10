@@ -12,7 +12,9 @@ const ItemDetail = ({ product }) => {
     const { addToCart } = useContext(CartContext);
 
     const onAdd = (count) => {
+
         setCart(true);
+
         addToCart(product, count);
       
         Swal.fire({
@@ -46,20 +48,26 @@ const ItemDetail = ({ product }) => {
 
                 <div className="item-detail-actions">
 
-                    {product.stock === 0 ? (
+                    {product.stock === 0
 
-                        <h2 className="out-of-stock-message">No hay más stock del producto...</h2>
+                    ?
 
-                    ) : cart ? (
+                    <h2 className="out-of-stock-message">No hay más stock del producto...</h2>
 
-                        <Link to={'/cart'} className="item-detail-button">Ir al carrito</Link>
+                    : 
+    
+                    <>
 
-                    ) : (
+                    <Counter initial={1} max={product.stock} onAdd={onAdd} />
+      
+                    {cart && 
 
-                        <Counter initial={1} max={product.stock} onAdd={onAdd} />
+                    <Link to={"/cart"} className="item-detail-button">Ir al carrito</Link>
+                }
+    </>
+  }
+</div>
 
-                    )}
-                </div>
             </div>
         </div>
     );
