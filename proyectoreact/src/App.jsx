@@ -9,6 +9,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import ErrorRoute from './components/ErrorRoute/ErrorRoute'
 import CartProvider from './context/CartContext'
 import Checkout from './components/Checkout/Checkout'
+import Contacto from './components/Contacto/Contacto'
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
         <Route path='/cart' element = {<Cart/>}/>
 
         <Route path='/checkout' element = {<Checkout/>}/>
+
+        <Route path='/contacto' element = {<Contacto/>}/>
 
         {/* ruta en caso de que ninguna de las anteriores funcionen */}
 

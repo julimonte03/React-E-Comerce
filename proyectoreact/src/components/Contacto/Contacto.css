@@ -1,0 +1,24 @@
+.contacto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .contacto-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .contacto-title {
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .contacto-info h2 {
+    color: #17a2b8; 
+    margin-bottom: 10px;
+  }
+  

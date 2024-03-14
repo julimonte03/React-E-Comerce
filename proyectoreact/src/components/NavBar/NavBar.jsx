@@ -1,6 +1,5 @@
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
@@ -11,7 +10,7 @@ function NavBar() {
     return (
         <Navbar expand="lg" className="NavBar bg-body-tertiary}">
             <Container fluid>
-                <Navbar.Brand className='nav-title'> <NavLink to={`/`}>La Tiendita</NavLink></Navbar.Brand>
+            <Navbar.Brand className='nav-title'> <NavLink to={`/`}><img src="../../../public/img/logo.jpg" alt="logo imagen" className="nav-logo" /></NavLink></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -19,9 +18,6 @@ function NavBar() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Item>
-                            <NavLink className='nav-title' to="/combos-locos">Combos Locos</NavLink>
-                        </Nav.Item>
                         <Nav.Item>
                             <NavLink className='nav-title' to="/contacto">Contacto</NavLink>
                         </Nav.Item>
